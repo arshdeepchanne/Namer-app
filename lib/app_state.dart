@@ -66,4 +66,9 @@ class MyAppState extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void removeFavorite(pair) {
+    favorites.remove(pair);
+    notifyListeners();
+  }
 }

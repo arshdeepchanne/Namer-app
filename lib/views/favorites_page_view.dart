@@ -27,7 +27,14 @@ class FavoritesPage extends StatelessWidget {
         ),
         for (var fav in favorites)
           ListTile(
-            leading: Icon(Icons.favorite),
+            leading: IconButton(
+              onPressed: () {
+                appState.removeFavorite(fav);
+              },
+              icon: Icon(
+                Icons.delete_outline_rounded,
+              ),
+            ),
             title: Text(fav.asPascalCase),
           )
       ],
