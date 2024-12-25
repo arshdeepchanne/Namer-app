@@ -23,8 +23,8 @@ class _HistoryListViewState extends State<HistoryListView> {
       initialItemCount: appState.historyList.length,
       itemBuilder: (context, index, animation) {
         final pair = appState.historyList[index];
-        return FadeTransition(
-          opacity: animation,
+        return SizeTransition(
+          sizeFactor: animation,
           child: Center(
             child: TextButton.icon(
               onPressed: () {

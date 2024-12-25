@@ -8,23 +8,6 @@ class MyAppState extends ChangeNotifier {
 
   GlobalKey? historyListKey;
 
-  // Widget _itemBuilder(context, index, animation) {
-  //   return FadeTransition(
-  //     opacity: animation,
-  //     child: Center(
-  //       child: TextButton.icon(
-  //         onPressed: () {
-  //           appState.toggleFavorites();
-  //         },
-  //         icon: appState.favorites.contains(pair)
-  //             ? Icon(Icons.favorite)
-  //             : SizedBox(),
-  //         label: Text(pair.asPascalCase),
-  //       ),
-  //     ),
-  //   );
-  // }
-
   void getNext() {
     historyList.insert(0, current);
     var animatedList = historyListKey?.currentState as AnimatedListState;
@@ -45,7 +28,7 @@ class MyAppState extends ChangeNotifier {
                 onPressed: () {},
                 icon: SizedBox(),
                 label: Text(
-                  lastItem.asCamelCase,
+                  lastItem.asPascalCase,
                 ),
               ),
             ),

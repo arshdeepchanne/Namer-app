@@ -33,9 +33,13 @@ class FavoritesPage extends StatelessWidget {
               },
               icon: Icon(
                 Icons.delete_outline_rounded,
+                semanticLabel: 'Delete',
               ),
             ),
-            title: Text(fav.asPascalCase),
+            title: Text(
+              fav.asPascalCase,
+              semanticsLabel: fav.asPascalCase,
+            ),
           )
       ],
     );

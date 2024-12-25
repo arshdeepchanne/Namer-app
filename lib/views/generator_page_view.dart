@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:namer_app/app_state.dart';
+import 'package:namer_app/extensions/string_extension.dart';
 import 'package:namer_app/views/history_list_view.dart';
 import 'package:provider/provider.dart';
 
@@ -76,10 +77,21 @@ class BigCard extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: AnimatedSize(
           duration: Duration(milliseconds: 200),
-          child: Text(
-            pair.asPascalCase,
-            style: style,
-            semanticsLabel: "${pair.first} ${pair.second}",
+          child: Wrap(
+            children: [
+              Text(
+                pair.first.capitalize(),
+                style: style.copyWith(
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              Text(
+                pair.second.capitalize(),
+                style: style.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),
